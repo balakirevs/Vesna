@@ -1,9 +1,12 @@
 Vesna::Application.routes.draw do
-  get "pages/home"
+  get "users/new"
 
-  get "pages/about"
+  root to:  'pages#home'
 
-  get "pages/rules"
+  match '/signup',  to: 'users#new'
+
+  match '/about', to: 'pages#about'
+  match '/rules', to: 'pages#rules'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
