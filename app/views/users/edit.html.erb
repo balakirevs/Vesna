@@ -1,0 +1,45 @@
+<% provide(:title, "Редактировать") %> 
+<h1>Изменить страницу</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :surname, "Фамилия" %>
+      <%= f.text_field :surname %>
+
+      <%= f.label :name, "Имя" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :middle_name, "Отчество" %>
+      <%= f.text_field :middle_name %>
+
+      <%= f.label :date_of_birth, "Дата рождения" %>
+      <%= f.text_field :date_of_birth %>
+
+      <%= f.label :city, "Город проживания" %>
+      <%= f.text_field :city %>
+      
+      <%= f.label :gender, "Пол" %>
+      <%= select_tag(:gender, options_for_select(['М', 'Ж'])) %>
+
+      <%= f.label :phone, "Телефон" %>
+      <%= f.text_field :phone%>
+
+      <%= f.label :image_url, "Фото" %>
+      <%= f.text_field :image_url %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "Пароль" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Подтверждение пароля" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Сохранить", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

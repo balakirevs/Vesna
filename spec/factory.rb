@@ -10,5 +10,9 @@ FactoryGirl.define do
     image_url "image.jpg" 
     password "foobar" 
     password_confirmation "foobar"
+
+    factory :admin do
+      admin true
+    end
   end
 end
