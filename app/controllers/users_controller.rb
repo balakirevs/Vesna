@@ -1,3 +1,5 @@
+#!/bin/env ruby
+# encoding: utf-8
 class UsersController < ApplicationController
 
   def show
@@ -11,7 +13,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:success] = "Welcome!"
+      sign_in @user
+      flash[:success] = "Добро пожаловать!"
       redirect_to @user
     else
       render 'new'

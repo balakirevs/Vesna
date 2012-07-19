@@ -20,6 +20,11 @@
 
       <%= f.label :city, "Город проживания" %>
       <%= f.text_field :city %>
+      
+      <%= f.label :gender, "Пол" %>
+      <%= select_tag(:gender, options_for_select(['М', 'Ж'])) %>
+      <%#= f.label :gender, "Пол" %>
+      <%#= f.select :gender, %w{ Male Female }, {:include_blank => 'None Specified'} %>
 
       <%= f.label :phone, "Телефон" %>
       <%= f.text_field :phone%>
