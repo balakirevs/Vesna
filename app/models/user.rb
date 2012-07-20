@@ -16,8 +16,9 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :city, :gender, :date_of_birth, :email, :image_url, :middle_name, :name, :phone, :surname, :password, :password_confirmation
+  attr_accessible :city, :gender, :date_of_birth, :email, :image, :middle_name, :name, :phone, :surname, :password, :password_confirmation
   has_secure_password
+  mount_uploader :image, ImageUploader
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token

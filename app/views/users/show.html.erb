@@ -4,6 +4,7 @@
     <section>
       <h1>
         <%= @user.name %>
+        <%= image_tag @user.image_url(:thumb).to_s %>
       </h1>
     </section>
   </aside>
